@@ -23,7 +23,7 @@ public class CountTickerController {
 
     @PostMapping(path = "/PushData", consumes = "application/json", produces = "application/json")
     public @ResponseBody ResponseEntity<List<String>> pushData(@RequestBody HashMap<String, Integer> object) {
-        counterCacheInterface.updateCounter(object, 10000);
-        return new ResponseEntity<List<String>>(counterCacheInterface.getMostReqData(10), HttpStatus.OK);
+        counterCacheInterface.updateCounter(object, 600000);
+        return new ResponseEntity<List<String>>(counterCacheInterface.getMostReqData(5), HttpStatus.OK);
     }
 }
